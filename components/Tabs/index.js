@@ -21,6 +21,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
 function tabMaker(tabContent) {
     const tabDiv = document.createElement('div');
     tabDiv.classList.add('tab');
+    tabDiv.setAttribute('data-type', tabContent); // For Stretch
     tabDiv.textContent = tabContent;
 
     return tabDiv;

@@ -25,10 +25,11 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         const articlesArray = Object.entries(response.data.articles);
 
         for (let i = 0; i < articlesArray.length; i++) {
-            // let articleTopic = articlesArray[i][0];
+            let articleTopic = articlesArray[i][0]; // For Stretch
 
             for (let j = 0; j < articlesArray[i][1].length; j++) {
                 let newCard = cardMaker(articlesArray[i][1][j]);
+                newCard.setAttribute('data-tag', articleTopic); // For Stretch
                 document.querySelector('.cards-container').appendChild(newCard);
                 // console.log(articlesArray[i][1][j]);
             }
